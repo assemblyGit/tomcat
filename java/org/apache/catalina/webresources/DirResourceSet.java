@@ -58,7 +58,7 @@ public class DirResourceSet extends AbstractFileResourceSet {
      *                          {@link org.apache.catalina.WebResourceSet} will
      *                          be mounted. For example, to add a directory of
      *                          JARs to a web application, the directory would
-     *                          be mounted at "/WEB-INF/lib/"
+     *                          be mounted at "/WEB-INF/lib/"   挂载的web应用路径
      * @param base          The absolute path to the directory on the file
      *                          system from which the resources will be served.
      * @param internalPath  The path within this new {@link

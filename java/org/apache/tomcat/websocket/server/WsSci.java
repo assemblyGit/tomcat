@@ -55,7 +55,7 @@ public class WsSci implements ServletContainerInitializer {
         // Group the discovered classes by type
         Set<ServerApplicationConfig> serverApplicationConfigs = new HashSet<>();
         Set<Class<? extends Endpoint>> scannedEndpointClazzes = new HashSet<>();
-        Set<Class<?>> scannedPojoEndpoints = new HashSet<>();
+        Set<Class<?>> scannedPojoEndpoints = new HashSet<>();//有ServerEndpoint注解的类
 
         try {
             // wsPackage is "javax.websocket."

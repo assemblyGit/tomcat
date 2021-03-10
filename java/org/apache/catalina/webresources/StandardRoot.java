@@ -88,7 +88,7 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
             new ArrayList<>();
     {
         allResources.add(preResources);
-        allResources.add(mainResources);
+        allResources.add(mainResources);//mainresources
         allResources.add(classResources);
         allResources.add(jarResources);
         allResources.add(postResources);
@@ -745,7 +745,7 @@ public class StandardRoot extends LifecycleMBeanBase implements WebResourceRoot 
             }
             if (f.isDirectory()) {
                 mainResourceSet = new DirResourceSet(this, "/", f.getAbsolutePath(), "/");
-            } else if(f.isFile() && docBase.endsWith(".war")) {
+            } else if(f.isFile() && docBase.endsWith(".war")) {//如果是war
                 mainResourceSet = new WarResourceSet(this, "/", f.getAbsolutePath());
             } else {
                 throw new IllegalArgumentException(

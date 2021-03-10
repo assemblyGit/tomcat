@@ -156,7 +156,7 @@ public interface Lifecycle {
      * The LifecycleEvent type for the "configure_start" event. Used by those
      * components that use a separate component to perform configuration and
      * need to signal when configuration should be performed - usually after
-     * {@link #BEFORE_START_EVENT} and before {@link #START_EVENT}.
+     * {@link #BEFORE_START_EVENT} and before {@link #START_EVENT}.  通常在BEFORE_START_EVENT和START_EVENT之间
      */
     public static final String CONFIGURE_START_EVENT = "configure_start";
 

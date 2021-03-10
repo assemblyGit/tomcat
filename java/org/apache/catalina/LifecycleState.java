@@ -34,7 +34,7 @@ public enum LifecycleState {
     DESTROYED(false, Lifecycle.AFTER_DESTROY_EVENT),
     FAILED(false, null);
 
-    private final boolean available;
+    private final boolean available;//表示是否可用
     private final String lifecycleEvent;
 
     private LifecycleState(boolean available, String lifecycleEvent) {

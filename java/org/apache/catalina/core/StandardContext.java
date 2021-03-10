@@ -4797,7 +4797,7 @@ public class StandardContext extends ContainerBase
         // Check current status in case resources were added that had already
         // been started
         if (!resources.getState().isAvailable()) {
-            resources.start();
+            resources.start();//启动reosurce
         }
 
         if (effectiveMajorVersion >=3 && addWebinfClassesResources) {

@@ -19,7 +19,7 @@ package org.apache.tomcat;
 import java.lang.reflect.InvocationTargetException;
 
 import javax.naming.NamingException;
-
+/**用来创建servlet容器中对象*/
 public interface InstanceManager {
 
     Object newInstance(Class<?> clazz) throws IllegalAccessException, InvocationTargetException,

@@ -753,14 +753,14 @@ public final class Mapper {
             if (firstDot > -1) {
                 int offset = host.getOffset();
                 try {
-                    host.setOffset(firstDot + offset);
+                    host.setOffset(firstDot + offset);//查找第一个点号之后的部分
                     mappedHost = exactFindIgnoreCase(hosts, host);
                 } finally {
                     // Make absolutely sure this gets reset
                     host.setOffset(offset);
                 }
             }
-            if (mappedHost == null) {
+            if (mappedHost == null) {//未找到使用默认host
                 mappedHost = defaultHost;
                 if (mappedHost == null) {
                     return;

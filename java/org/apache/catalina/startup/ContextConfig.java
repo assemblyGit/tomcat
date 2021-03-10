@@ -133,7 +133,7 @@ public class ContextConfig implements LifecycleListener {
         new LoginConfig("NONE", null, null, null);
 
 
-    /**
+    /**   <p>认证方式对应的实现类</p>
      * The set of Authenticators that we know how to configure.  The key is
      * the name of the implemented authentication method, and the value is
      * the fully qualified Java class name of the corresponding Valve.
@@ -175,7 +175,7 @@ public class ContextConfig implements LifecycleListener {
 
 
     // ----------------------------------------------------- Instance Variables
-    /**
+    /**   <p>用户自定义的login 方式到authenticator</p>
      * Custom mappings of login methods to authenticators
      */
     protected Map<String,Authenticator> customAuthenticators;
@@ -218,14 +218,14 @@ public class ContextConfig implements LifecycleListener {
     protected final Map<ServletContainerInitializer, Set<Class<?>>> initializerClassMap =
             new LinkedHashMap<>();
 
-    /**
+    /**    <p> HandlesTypes 中value 中的class 到 handletype 注解的ServletContainerInitializer 集合的映射</p>
      * Map of Types to ServletContainerInitializer that are interested in those
      * types.
      */
     protected final Map<Class<?>, Set<ServletContainerInitializer>> typeInitializerMap =
             new HashMap<>();
 
-    /**
+    /**    <p>至少有一个的HandlesTypes注解的value中存在 注解类</p>
      * Flag that indicates if at least one {@link HandlesTypes} entry is present
      * that represents an annotation.
      */
@@ -379,7 +379,7 @@ public class ContextConfig implements LifecycleListener {
                 return;
             }
 
-            // Identify the class name of the Valve we should configure
+            // Identify the class name of the Valve we should configure  获取已知认证方式
             String authenticatorName = authenticators.getProperty(loginConfig.getAuthMethod());
             if (authenticatorName == null) {
                 log.error(sm.getString("contextConfig.authenticatorMissing",
@@ -1134,7 +1134,7 @@ public class ContextConfig implements LifecycleListener {
 
         // Step 3. Look for ServletContainerInitializer implementations
         if (ok) {
-            processServletContainerInitializers();
+            processServletContainerInitializers();//加载ServletContainerInitializer 实现类 的Class
         }
 
         if  (!webXml.isMetadataComplete() || typeInitializerMap.size() > 0) {

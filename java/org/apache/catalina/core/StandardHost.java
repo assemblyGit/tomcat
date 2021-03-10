@@ -105,7 +105,7 @@ public class StandardHost extends ContainerBase implements Host {
     private boolean autoDeploy = true;
 
 
-    /**
+    /**   <p>默认的context配置</p>
      * The Java class name of the default context configuration class
      * for deployed web applications.
      */
